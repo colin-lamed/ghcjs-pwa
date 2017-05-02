@@ -1,0 +1,7 @@
+(function() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('#{rawJS $ service_worker_js}')
+      .then(function() { console.log('Registered service worker!'); });
+  }
+})();

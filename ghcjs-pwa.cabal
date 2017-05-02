@@ -1,0 +1,36 @@
+name:                ghcjs-pwa
+version:             0.1.0.0
+synopsis:            A menu-driven text adventure motor
+description:         Please see README.md
+homepage:            http://github.com/githubuser/textad-menu-core#readme
+license:             BSD3
+author:              Author name here
+maintainer:          example@example.com
+copyright:           2010 Author Here
+category:            Web
+build-type:          Simple
+data-files:          resources/index.hamlet
+                   , resources/service-worker-register.julius
+                   , resources/offline-service-worker.julius
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Pwa.Config
+                     , Pwa.PwaSetup
+  other-modules:       Pwa.GenPwa
+  ghc-options:
+  build-depends:       base
+                     , Cabal
+                     , text
+                     , shakespeare
+                     , blaze-html
+                     , vector
+                     , aeson
+                     , aeson-pretty
+                     , aeson-utils
+                     , filepath
+                     , directory
+                     , bytestring
+                     , random
+  default-language:    Haskell2010

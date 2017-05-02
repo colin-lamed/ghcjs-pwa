@@ -1,0 +1,4 @@
+resolver: lts-7.8
+
+packages:
+- '.'

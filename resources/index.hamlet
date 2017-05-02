@@ -1,0 +1,28 @@
+$doctype 5
+<html>
+  <head>
+    <link rel="manifest" href=#{manifest_json}>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add to home screen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=#{name config}>
+    <link rel="apple-touch-icon" href="#{path $ head $ icons config}">
+    $forall icon <- icons config
+      $forall size <- sizes icon
+        <!-- Android -->
+        <link rel="icon" sizes="#{size}" href="#{path icon}">
+        <!-- iOS -->
+        <link rel="apple-touch-icon" sizes="#{size}" href="#{path icon}">
+
+    <!-- Tile for Windows -->
+    <meta name="msapplication-TileImage" content="#{path $ head $ icons config}">
+    <meta name="msapplication-TileColor" content="#{tileColour config}">
+    <link rel="shortcut icon" type="image/x-icon" href="#{favicon config}">
+    <title>#{name config}
+    <script language="javascript" src=#{rts_js}>
+    <script language="javascript" src=#{lib_js}>
+    <script language="javascript" src=#{out_js}>
+  <body>
+    <script language="javascript" src=#{service_worker_register_js} async>
+    <script language="javascript" src=#{runmain_js} defer>
